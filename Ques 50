@@ -1,0 +1,42 @@
+Q 50: Explain the concept of equilibrium index and its applications in array problems.
+
+Concept of Equilibrium Index:
+An equilibrium index in an array is an index where the sum of elements before it (left subarray) is equal to the sum of elements after it** (right subarray).  
+- Formally: For an array `arr[]`, index `i` is an equilibrium index if:  
+  arr[0] + arr[1] + ... + arr[i-1] = arr[i+1] + arr[i+2] + ... + arr[n-1].
+
+Key Points:
+1. Edge Cases:
+   - The first index (`i=0`) has no left subarray → Left sum = `0`.
+   - The last index (`i=n-1`) has no right subarray → Right sum = `0`.
+
+2. Multiple Solutions: An array can have **zero, one, or multiple** equilibrium indices.
+
+3. Efficiency: The standard solution uses **O(n)** time with **O(1)** space (see Question 3’s solution).
+
+Applications:
+1. Partitioning Arrays:  
+   - Split arrays into two parts with equal sums (e.g., for load balancing).
+
+2. Algorithm Design:  
+   - Used in problems like pivot indices (similar to equilibrium index).
+
+3. Data Analysis:  
+   - Identify points where cumulative distributions balance (e.g., in statistics).
+
+4. Dynamic Programming:  
+   - Preprocessing arrays for quick sum queries (prefix/suffix sums).
+
+
+Example:
+Input Array: [1, 2, 3, 4, 3, 2, 1]
+- Equilibrium Index: 3 (Value = `4`)  
+  - Left sum: `1 + 2 + 3 = 6`  
+  - Right sum: `3 + 2 + 1 = 6`  
+
+Why It Matters:
+- Optimization: Avoids recalculating sums repeatedly (e.g., using prefix sums).  
+- Real-world Use:  
+  - Financial systems (finding balance points in transactions).  
+  - Physics (center of mass calculations).  
+
